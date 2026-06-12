@@ -41,3 +41,6 @@ Asegúrese de tener el archivo siniestros_viales_victimas.xlsx en el mismo direc
 
    ```bash
    python main.py
+
+
+Nota: Si se evalúa el proyecto utilizando el botón 'Open in Colab', recuerde subir manualmente el archivo siniestros_viales_victimas.xlsx al entorno de ejecución antes de correr las celdas.
