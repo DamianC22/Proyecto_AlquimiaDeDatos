@@ -112,7 +112,7 @@ for nombre_modelo, pipeline in pipelines.items():
 # 4. ALMACENAMIENTO EN BASE DE DATOS NOSQL (MONGODB)
 # ==========================================
 
-URI = "mongodb+srv://AlquimiaDeDatos:ProgAv@cluster0.knsflmx.mongodb.net/?appName=Cluster0"
+URI = "mongodb+srv://usuario:contraseña@cluster0.knsflmx.mongodb.net/?appName=Cluster0"
 
 try:
     # 1. Creamos la conexión (El Cliente)
