@@ -10,11 +10,17 @@ El objetivo principal de este proyecto es construir un pipeline de Machine Learn
 * Ricardo Alberto Ureña
 
 ## 🛠️ Tecnologías y Herramientas Utilizadas
-* **Python 3.1**
+* **Python 3.13.7**
 * **Pandas & NumPy:** Limpieza, agrupación temporal (GroupBy) y Feature Engineering.
 * **Scikit-Learn:** Creación de Pipelines, escalado (StandardScaler) y entrenamiento de modelos (Random Forest y Gradient Boosting).
 * **Plotly:** Visualización interactiva de métricas y evaluación de modelos.
 * **MongoDB Atlas:** Base de datos NoSQL en la nube para persistencia de datos procesados, configuración del pipeline y resultados.
+
+## 📂 Estructura del Repositorio
+* `TP_Final_Siniestros.ipynb`: Cuaderno interactivo (Jupyter/Colab) con la exploración de datos, explicaciones paso a paso y visualización de gráficos.
+* `main.py`: Script de producción puro con el pipeline de machine learning para ejecución en consola o automatización.
+* `siniestros_viales_victimas.xlsx`: Dataset original utilizado para el preprocesamiento.
+* `requirements.txt`: Dependencias y librerías necesarias.
 
 ## ⚙️ Estructura del Script
 El archivo principal (`main.py`) ejecuta el flujo completo de forma secuencial:
@@ -30,14 +36,20 @@ El archivo principal (`main.py`) ejecuta el flujo completo de forma secuencial:
    ```bash
    git clone <URL_DEL_REPOSITORIO>
    cd <NOMBRE_DE_LA_CARPETA>
+   ```
 
 2. **Instalar las dependencias:**
-Se recomienda utilizar un entorno virtual
+   Se recomienda utilizar un entorno virtual.
+
    ```bash
    pip install -r requirements.txt
+   ```
 
 3. **Ejecutar el pipeline:**
-Asegúrese de tener el archivo siniestros_viales_victimas.xlsx en el mismo directorio.
+   Asegúrese de tener el archivo siniestros_viales_victimas.xlsx en el mismo directorio.
 
    ```bash
    python main.py
+   ```
+
+Nota: Si se evalúa el proyecto utilizando el botón 'Open in Colab', recuerde subir manualmente el archivo siniestros_viales_victimas.xlsx al entorno de ejecución antes de correr las celdas.
