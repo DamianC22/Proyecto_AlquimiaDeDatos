@@ -33,8 +33,30 @@ X = df_diario[['año', 'mes', 'dia', 'dia_semana']]
 y = df_diario['cantidad_victimas']
 
 # División en conjuntos de entrenamiento y prueba (80/20)
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+# ==========================================
+# 1. CARGA Y PREPROCESAMIENTO DE DATOS
+# ==========================================
 
+# Cargar el dataset (ajusta la ruta según corresponda)
+df = pd.read_excel('siniestros_viales_victimas.xlsx', sheet_name='VICTIMAS')
+# Convertir la fecha a formato datetime
+df['fecha_siniestro'] = pd.to_datetime(df['fecha_siniestro'], errors='coerce')
+
+# Agrupar los datos por día para contar la cantidad de víctimas (nuestro target continuo)
+df_diario = df.groupby('fecha_siniestro').size().reset_index(name='cantidad_victimas')
+
+# Ingeniería de características temporales
+df_diario['año'] = df_diario['fecha_siniestro'].dt.year
+df_diario['mes'] = df_diario['fecha_siniestro'].dt.month
+df_diario['dia'] = df_diario['fecha_siniestro'].dt.day
+df_diario['dia_semana'] = df_diario['fecha_siniestro'].dt.dayofweek
+
+# Separar características (X) y variable objetivo (y)
+X = df_diario[['año', 'mes', 'dia', 'dia_semana']]
+y = df_diario['cantidad_victimas']
+
+# División en conjuntos de entrenamiento y prueba (80/20)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, shuffle=False)
 # ==========================================
 # 2. CONSTRUCCIÓN DE MODELOS CON PIPELINES
 # ==========================================
